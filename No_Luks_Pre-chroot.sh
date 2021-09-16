@@ -5,7 +5,8 @@ echo "If you need it, to use iwctl you put     devices    to list the devices, t
 iwctl
 ping archlinux.org
 timedatectl set-ntp true
-echo "sda1 as efi, sda2 as root, sda3 as swap and 8GB" && fdisk
+echo "sda1 as efi, sda2 as root, sda3 as swap and 8GB"
+fdisk
 mkfs.vfat -F32 /dev/sda1
 mkfs.btrfs -f /dev/sda2
 mkswap /dev/sda3 
