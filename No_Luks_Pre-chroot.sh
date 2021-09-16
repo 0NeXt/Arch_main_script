@@ -1,3 +1,5 @@
+echo "Starting first stage"
+pacman -yS
 echo "if the pacman sync worked it means your connected and don't need the iwctl, but if it failed use iwctl"
 echo "If you need it, to use iwctl you put     devices    to list the devices, then    station device_name get-networks    to find your network, then    station device_name connect networkname   put your password and wait 5 secs to vertify  if it's connected or not, then you can put exit to continue."
 iwctl
@@ -23,10 +25,10 @@ genfstab -U /mnt >> /mnt/etc/fstab
 echo "# /dev/sda3 LABEL=swap" >> /mnt/etc/fstab
 echo "/dev/sda3 none  swap  defaults  0 0" >> /mnt/etc/fstab
 pacman -Sy figlet lolcat
-echo "Welp, were done with the biggining, download the part two with- you know what? I'll download it anyway..." | figlet | lolcat
+echo "Welp, were done with the beginning, download the part two with- you know what? I'll download it anyway..." | figlet | lolcat
 mkdir /mnt/gittttesst
 git clone https://github.com/0NeXt/Arch_main_script/* /mnt/gittttesst
 mv /mnt/gittttesst/No_Luks_Pre-chroot.sh /mnt/install.sh
 rm -rf /mnt/gittttesst
-echo "Now chrooting, run the sh file in the / directory" | figlet | lolcat 
+echo "Now chrooting, run the sh file in the / directory for part two" | figlet | lolcat 
 arch-chroot /mnt
