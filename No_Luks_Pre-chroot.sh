@@ -1,5 +1,5 @@
 echo "if the pacman sync worked it means your connected and don't need the iwctl, but if it failed use iwctl"
-echo "If you need it, to use iwctl you put devices to list the devices, then    station device_name get-networks    to find your network, then    station device_name connect networkname   put your password and wait 5 secs to vertify  if it's connected or not, then you can put exit to continue."
+echo "If you need it, to use iwctl you put     devices    to list the devices, then    station device_name get-networks    to find your network, then    station device_name connect networkname   put your password and wait 5 secs to vertify  if it's connected or not, then you can put exit to continue."
 iwctl
 ping archlinux.org
 timedatectl set-ntp true
