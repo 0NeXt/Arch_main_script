@@ -20,11 +20,12 @@ mkdir -p /mnt/home
 mkdir -p /mnt/boot
 mount -o noatime,compress=lzo,space_cache,subvol=@home /dev/sda2 /mnt/home
 mount /dev/sda1 /mnt/boot
-pacstrap /mnt base base-devel linux-zen linux-lts linux-firmware vim nano emacs vi grub networkmanager efibootmgr
+pacman -yS archlinux-keyring
+pacstrap /mnt base base-devel linux-zen linux-lts linux-firmware vim nano emacs vi grub networkmanager efibootmgr archlinux-keyring
 genfstab -U /mnt >> /mnt/etc/fstab
 echo "# /dev/sda3 LABEL=swap" >> /mnt/etc/fstab
 echo "/dev/sda3 none  swap  defaults  0 0" >> /mnt/etc/fstab
-pacman -Sy figlet lolcat
+pacman -S figlet lolcat
 echo "Welp, were done with the beginning, download the part two with- you know what? I'll download it anyway..." | figlet | lolcat
 mkdir /mnt/gittttesst
 git clone https://github.com/0NeXt/Arch_main_script/* /mnt/gittttesst
