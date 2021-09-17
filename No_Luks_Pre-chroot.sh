@@ -29,8 +29,9 @@ echo "/dev/sda3 none  swap  defaults  0 0" >> /mnt/etc/fstab
 pacman -S figlet lolcat
 echo "Welp, were done with the beginning, download the part two with- you know what? I'll download it anyway..." | figlet | lolcat
 mkdir /mnt/gittttesst
-git clone https://github.com/0NeXt/Arch_main_script/* /mnt/gittttesst
-mv /mnt/gittttesst/No_Luks_Pre-chroot.sh /mnt/install.sh
+git clone https://github.com/0NeXt/Arch_main_script/ /mnt/gittttesst
+mv /mnt/gittttesst/Stage2.sh /mnt/stage2.sh
+mv /mnt/gittttesst/Stage3.sh /mnt/stage3.sh
 rm -rf /mnt/gittttesst
 echo "Now chrooting, run the sh file in the / directory for part two" | figlet | lolcat 
 arch-chroot /mnt
